@@ -2,31 +2,61 @@
 body {
   margin: 0;
   padding: 0;
-  background-color: #f4f6f8;
+  background: radial-gradient(circle at top left, #f3f4f6, #e5e7eb);
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  color: #1f2937;
+  min-height: 100vh;
 }
 
-/* Башкы контейнер */
-h1 {
-  color: #2c3e50;
+/* Башкы аталыштар */
+h1, h2, h3 {
+  color: #111827;
   font-weight: 700;
+  letter-spacing: -0.5px;
 }
 
-/* Бөлүктөрдүн (секциялардын) аралыгын ачуу үчүн */
+/* Бөлүктөрдүн аралыгы */
 hr {
   border: 0;
-  height: 2px;
-  background-color: #dcdde1;
-  margin: 40px auto;
-  width: 80%;
+  height: 1px;
+  background: linear-gradient(to right, transparent, #d1d5db, transparent);
+  margin: 30px auto;
+  width: 90%;
 }
 
-/* Карточкалар кооз көрүнүшү үчүн сырткы көлөкө жана анимация */
-.card {
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+/* Карточкаларды жана блок компоненттерин кооздоо */
+.card, [class*="MuiPaper-root"], .ant-card {
+  border-radius: 16px !important;
+  border: 1px solid rgba(255, 255, 255, 0.8) !important;
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05), 0 8px 10px -6px rgba(0, 0, 0, 0.05) !important;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+  background: rgba(255, 255, 255, 0.9) !important;
+  backdrop-filter: blur(10px);
 }
 
-.card:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+/* Чычкандан сылагандагы анимация */
+.card:hover, [class*="MuiPaper-root"]:hover, .ant-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 30px -10px rgba(0, 0, 0, 0.08), 0 10px 15px -5px rgba(0, 0, 0, 0.04) !important;
+  border-color: rgba(99, 102, 241, 0.2) !important;
+}
+
+/* Форманын ичиндеги элементтердин аралыгы */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* Кнопкаларды заманбап кылуу */
+button, [class*="MuiButton-root"], .ant-btn {
+  border-radius: 10px !important;
+  text-transform: none !important;
+  font-weight: 600 !important;
+  transition: all 0.2s ease-in-out !important;
+}
+
+button:hover, [class*="MuiButton-root"]:hover, .ant-btn:hover {
+  transform: translateY(-2px);
+  filter: brightness(1.05);
 }

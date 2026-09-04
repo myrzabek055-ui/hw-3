@@ -18,4 +18,9 @@ export const usePostsStore = create((set) => ({
       set({ error: error.message, loading: false });
     }
   },
+
+  addTask: (newTask) => set((state) => ({
+    posts: [newTask, ...state.posts]
+  })),
+
 }));
