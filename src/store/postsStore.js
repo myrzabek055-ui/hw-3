@@ -23,4 +23,13 @@ export const usePostsStore = create((set) => ({
     posts: [newTask, ...state.posts]
   })),
 
+  updateTask: (id, updatedData) => set((state) => ({
+    posts: state.posts.map((post) =>
+      post.id === id ? { ...post, ...updatedData } : post
+    )
+  })),
+
+  deleteTask: (id) => set((state) => ({
+    posts: state.posts.filter((post) => post.id !== id)
+  })),
 }));
